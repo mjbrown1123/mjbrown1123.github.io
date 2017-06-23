@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<header>
+	
+	<title>Firebase Demo</title>
+
+
+	<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase-messaging.js"></script>
+
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBmzYGacinABet0QTioyQYA3Idr87aNFHg",
+	    authDomain: "fir-demo-a4206.firebaseapp.com",
+	    databaseURL: "https://fir-demo-a4206.firebaseio.com",
+	    projectId: "fir-demo-a4206",
+	    storageBucket: "",
+	    messagingSenderId: "364588253485"
+	  };
+	  firebase.initializeApp(config);
+
+	  var database = firebase.database();
+	</script>
+
+	<script type="text/javascript" src="main.js"></script>
+
+</header>
+
+<body>
+	
+
+	<input type="text" id="message" />
+
+	<!--this code works for the input button-->
+	<input value="send message" type="button" id="sendMessage" onclick="send();" style="background-color:red;height:50px;width:100px;"  />
+
+</body>
