@@ -1,21 +1,39 @@
 var mesInd = 0;
 var databaseRef = firebase.database().ref('messages/');
+var userName = "default_user";
 
 function send() {
 
-	var userName = "web";
 	var val = document.getElementById('message').value;
 
-	//newBlock(userName,val);
-
 	
-	document.getElementById('message').value = ""
+	if(!(val === "")) {
+		
 
-	console.log("Send: " + val);
+		console.log("Send: " + val);
 
-	writeUserData(userName,val);
+		writeUserData(userName,val);
+	}
+
+	document.getElementById('message').value = "";
 
 
+};
+
+function changeUser() {
+
+	var nam = document.getElementById('username').value;
+
+	if(!(nam === "")) {
+		
+
+		console.log("Change username to: " + nam);
+
+		userName = nam;
+	}
+
+
+	document.getElementById('username').value = "";
 
 };
 
@@ -48,7 +66,7 @@ function newBlock(user, message) {
 	var div = document.createElement('div');
 
 	div.id = "mes" + mesInd;
-	div.textContent = message;
+	div.textContent = user + ": " + message;
 	div.style.margin = '30px';
 	div.style.backgroundColor = 'cyan';
 	div.style.borderColor='black';
